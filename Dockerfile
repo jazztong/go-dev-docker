@@ -23,7 +23,11 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
 # Install standard version
 RUN npm i -g standard-version
 
-RUN apt-get -y install git procps lsb-release
+RUN apt-get -y install git procps lsb-release wget unzip
+#
+# Install terraform
+RUN wget https://releases.hashicorp.com/terraform/0.12.16/terraform_0.12.16_linux_amd64.zip \
+    && unzip ./terraform_0.12.16_linux_amd64.zip -d /usr/local/bin
 #
 # Install gocode-gomod
 RUN go get -x -d github.com/stamblerre/gocode 2>&1 \
