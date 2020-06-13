@@ -61,6 +61,11 @@ RUN go get -u -v \
     github.com/golangci/golangci-lint/cmd/golangci-lint \
     github.com/mgechev/revive \
     github.com/derekparker/delve/cmd/dlv 2>&1
+
+# Install docker
+RUN curl -fsSL https://get.docker.com -o get-docker.sh && \
+    sh get-docker.sh
+
 # Clean up
 RUN apt-get autoremove -y \
     && apt-get clean -y \
