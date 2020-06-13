@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang:1.13.4
 LABEL maintainer="Jazz Tong <jazz.twk@gmail.com>"
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
